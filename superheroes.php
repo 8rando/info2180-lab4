@@ -64,7 +64,20 @@ $superheroes = [
 ];
 
 header('Content-Type: application/json');
-echo json_encode($superheroes);
+
+$query = filter_input(INPUT_GET, 'query', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+if (!empty($query)) {
+    $query = strtolower($query);
+    $filteredHeroes = array_filter($superheroes, function ($hero) use ($query) {
+        return stripos(strtolower($hero['name']), $query) !== false || stripos(strtolower($hero['alias']), $query) !== false;
+    });
+    echo json_encode(array_values($filteredHeroes));
+} else {
+    echo json_encode($superheroes);
+}
+
+
 ?>
 
 

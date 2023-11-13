@@ -5,10 +5,82 @@ body {
     background-color: #f4f4f4;
 }
 
-#search-query {
-    margin-right: 10px;
+#search-container {
+    margin-bottom: 20px;
 }
 
-button {
-    padding: 5px 15px;
+#search-query {
+    padding: 10px;
+    margin-right: 10px;
+    width: 300px; /* Adjust the width as needed */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#search-button {
+    padding: 10px 15px;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #0056b3; /* Darker shade for hover state */
+}
+
+#result {
+    border-top: 2px solid #ddd;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.hero, .error {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px; /* Spacing between entries */
+    background-color: white;
+    border-radius: 4px;
+}
+.hero h3 {
+    font-weight: bold; /* Makes the text bold */
+    margin: 0;
+    text-transform: uppercase; /* Converts text to uppercase */
+}
+
+.hero h4 {
+    margin: 5px 0;
+    font-style: italic; /* Optional: Italicize the A.K.A text */
+}
+
+/* Adjust the .hero p styles as needed */
+.hero p {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* You can also add some more specific styles for the alias if needed */
+.hero .alias {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Remember to apply the class "alias" to your <p> tag in your JavaScript if you use this */
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+/* Additional styling for responsive behavior */
+@media (max-width: 768px) {
+    #search-query {
+        width: auto; /* Full width on smaller screens */
+        margin-bottom: 10px; /* Spacing between input and button */
+    }
+
+    #search-button {
+        width: 100%;
+    }
 }
